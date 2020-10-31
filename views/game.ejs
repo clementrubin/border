@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Rueil sa maman - Border Border</title>
+        <link rel="stylesheet" type="text/css" href="/border/styles/border_style.css">
+    </head>
+
+    <body>
+        <%- include('header.ejs') -%>
+        <main>
+            <div id="introduction">
+                <h1 id="intro_title">Border Border</h1>
+            </div>
+            <div id="game_zone">
+                <div id="infos">
+                    <form action="/" method="post" id="create_room_form">
+                        <input type="text" name="create_room_name" id="create_room_name" placeholder="Room name" size="50" autofocus />
+                        <input type="submit" id="request_room_creation" value="Créer" />
+                    </form>
+                    <form action="/" method="post" id="join_room_form">
+                        <input type="text" name="join_room_name" id="join_room_name" placeholder="Room name" size="50" autofocus />
+                        <input type="submit" id="request_room_creation" value="Rejoindre" />
+                    </form>
+                </div>
+                <div id="rooms_list">
+                    <div id="rooms">
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="/border/socket.io/socket.io.js"></script>
+        <script src="/border/client_scripts/cookie_client_functions.js"></script>
+        <script src="/border/client_scripts/border_client_functions.js"></script>
+        <script src="/border/client_scripts/socket_client_functions.js"></script>
+        <script>
+            // Ask the server to update the list of rooms
+            socket.emit('ask_rooms_update');
+        </script>
+    </body>
+</html>

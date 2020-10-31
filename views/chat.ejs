@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Rueil sa maman - Chat</title>
+        <link rel="stylesheet" type="text/css" href="/border/styles/chat_style.css">
+    </head>
+
+    <body>
+        <%- include('header.ejs') -%>
+        <main>
+            <div id="introduction">
+                <h1 id="intro_title">Chat section</h1>
+            </div>
+
+            <div id="writing">
+                <form action="/" method="post" id="formulaire_chat">
+                    <input type="text" name="message" id="message" placeholder="Message..." size="50" autofocus />
+                    <input type="submit" id="envoi_message" value="Envoyer" />
+                </form>
+            </div>
+
+            <div id="zone_chat">
+
+            </div>
+        </main>
+
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="/border/socket.io/socket.io.js"></script>
+        <script src="/border/client_scripts/cookie_client_functions.js"></script>
+        <script src="/border/client_scripts/socket_client_functions.js"></script>
+        <script src="/border/client_scripts/chat_client_functions.js"></script>
+    </body>
+</html>

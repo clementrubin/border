@@ -1,0 +1,11 @@
+a {
+    text-decoration: none; color: black;
+}
+
+#introduction {
+    height: 78vh;
+    background-image: url("../styles/images/logo_rueil_confinement_transparent.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

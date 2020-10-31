@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Rueil sa maman - Border Border</title>
+        <link rel="stylesheet" type="text/css" href="/border/styles/border_room_style.css">
+    </head>
+
+    <body>
+        <%- include('header.ejs') -%>
+        <main>
+            <div id="introduction">
+                <h1 id="intro_title">Border Border</h1>
+            </div>
+            <div id="game_zone">
+                <div id="game_arena">
+                    <div id="master_card">
+                        <div id="master_name">
+
+                        </div>
+                        <div id="question_card">
+
+                        </div>
+                        <div id="timer">
+                            -
+                        </div>
+                    </div>
+                    <div id="game_master">
+
+                    </div>
+                    <div id="game_slave">
+
+                    </div>
+                </div>
+                <div id="game_info">
+                    <div id="actions">
+                        <button onclick="launchGame()">Nouvelle partie</button>
+                        <button onclick="leaveRoom()">Quitter la room</button>
+                        <!-- <button onclick="callNewTurn()">Nouveau tour</button> -->
+                    </div>
+                    <div id="players">
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="/border/socket.io/socket.io.js"></script>
+        <script src="/border/client_scripts/cookie_client_functions.js"></script>
+        <script src="/border/client_scripts/border_client_functions.js"></script>
+        <script src="/border/client_scripts/socket_client_functions.js"></script>
+        <script>
+            // Create the 5 empty answer cards of the player hand
+            for(var i = 0 ; i < 5; i++) {
+                var newCardHtml = "<div id='card" + i + "' class='answer_card'></div>"
+                document.getElementById('game_slave').innerHTML += newCardHtml;
+            }
+
+            // Ask the server to update the list of players
+            socket.emit('ask_players_update', getCookie("roomName"));
+
+            $('.answer_card').click( function() {
+                if (selectedCard == "" && slave_time) {
+                    $(this).addClass('selected_card');
+                    selectedCard = this.id;
+                    selectedValue = this.getElementsByTagName('p')[0].innerHTML;
+                    selectAnswer(selectedCard, selectedValue);
+                }
+            });
+
+        </script>
+    </body>
+</html>

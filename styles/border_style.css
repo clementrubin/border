@@ -1,0 +1,46 @@
+html, body {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#introduction {
+    height: 10vh;
+}
+
+#introduction h1 {
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+
+#game_zone {
+    height: 78vh;
+    background-image: url("./images/logo_rueil_confinement_transparent.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#infos {
+    flex-grow: 4;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+    background-color: rgba(220,220,220,0.1);
+    border-radius: 5px;
+}
+
+#rooms_list {
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: 5px;
+    height: 100%;
+    background-color: rgba(220,220,220,0.1);
+    border-radius: 5px;
+}

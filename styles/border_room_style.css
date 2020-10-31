@@ -1,0 +1,169 @@
+html, body {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#introduction {
+    height: 10vh;
+}
+
+#introduction h1 {
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+
+#game_zone {
+    height: 78vh;
+    background-image: url("../styles/images/logo_rueil_confinement_transparent.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#game_arena {
+    width: 75%;
+    height: 100%;
+    background-color: rgba(220,220,220,0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#game_info {
+    width: 15%;
+    height: 100%;
+    background-color: rgba(220,220,220,0.1);
+    border-radius: 5px;
+}
+
+/* Game arena big zones */
+#master_card {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#game_master {
+    display: none;
+    flex-grow: 1;
+    flex-direction: row;
+    align-content: flex-end;
+    flex-wrap: wrap-reverse;
+}
+
+#game_slave {
+    display: flex;
+    height: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+/* Game arena cards */
+#master_name {
+    width: 50%;
+    font-size: 2em;
+    font-weight: bold;
+    color: rgba(126,138,255,1);
+    text-align: right;
+}
+
+#question_card {
+    width: 17%;
+    height: 80%;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: rgb(126,138,255);
+    background-color: rgba(220,220,220,1);
+    border: 3px solid rgb(126,138,255);
+    border-radius: 20px;
+    box-shadow: 0px -2px 8px rgba(126,138,255, 0.5);
+}
+
+#timer {
+    width: 10vh;
+    height: 10vh;
+    font-size: 2em;
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+    background-color: rgba(126,138,255,1);
+    border-radius: 20px;
+    box-shadow: 0px -2px 8px rgba(126,138,255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.master_answer_card {
+    width: 15%;
+    height: 20vh;
+    margin-right: 2%;
+    margin-top: 2%;
+    padding-top: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: rgba(255,255,255,1);
+    border: 3px solid rgb(126,138,255);
+    border-radius: 20px;
+    box-shadow: 0px -2px 8px rgba(126,138,255, 0.5);
+    transition-duration: 0.3s;
+}
+
+.master_answer_card:hover {
+    box-shadow: inset 0px 0px 10px 3px rgba(126,138,255, 0.7);
+    transition-duration: 0.3s;
+}
+
+.answer_card {
+    width: 17%;
+    height: 20vh;
+    padding-top: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: rgba(255,255,255,1);
+    border: 3px solid rgb(126,138,255);
+    border-bottom: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -2px 8px rgba(126,138,255, 0.5);
+    transition-duration: 0.3s;
+}
+
+.answer_card:hover {
+    height: 25vh;
+    transition-duration: 0.3s;
+}
+
+.selected_card {
+    height: 25vh;
+    transition-duration: 0.3s;
+}
+
+.answer_card p {
+    color: rgb(126,138,255);
+}
+
+/* Game info zones */
+#actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#players {
+
+}
+
+#players li {
+    list-style: none;
+}
