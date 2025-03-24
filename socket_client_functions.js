@@ -5,7 +5,7 @@ var isMaster = false;
 
 // var socket = io({transports: ['websocket'], path: '/border/socket.io'});
 // var socket = io('http://localhost:6969', {transports: ['websocket']});
-// var socket = io('http://www.clementrubin.fr', {path: '/border/socket.io'}); // works well on the master
+// var socket = io('http://www.c***r', {path: '/border/socket.io'}); // works well on the master
 var socket = io({path: '/border/socket.io'}); // works well on the master
 
 var setUsername = function() {
